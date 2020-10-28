@@ -43,8 +43,8 @@ function App() {
 				let curr = destination.index;
 				item = task1[prev];
 
-				let newItem = item;
-				newItem.id = item.id.concat(item.id);
+				let newItem = { ...item };
+				newItem.id = String(Math.random() * 100);
 
 				let newTask = task2;
 				newTask.splice(curr, 0, newItem);
@@ -55,13 +55,14 @@ function App() {
 				let curr = destination.index;
 				item = task2[prev];
 
-				let newItem = item;
-				newItem.id = item.id.concat(item.id);
+				let newItem = { ...item };
+				newItem.id = String(Math.random() * 100);
 
 				let newTask = task1;
 				newTask.splice(curr, 0, newItem);
 
 				setTask1(newTask);
+				console.log(newTask, task2, item);
 			}
 		}
 
